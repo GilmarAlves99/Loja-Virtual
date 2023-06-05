@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(56, 56, 56);
+}
+
+#produtos,
+#carrinho {
+    background-color: rgb(109, 109, 109);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.produto-single {
+    width: 33, 33%;
+    padding: 0 20px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
