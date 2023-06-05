@@ -2,7 +2,7 @@
 
 ### Criando um carrinho de compras com js
 
-Link : <a href="">  </a>
+Link : <a href="https://gilmaralves99.github.io/Loja-Virtual/"> abrir site</a>
 
 Etapas :
 
@@ -39,7 +39,7 @@ Listagem :
 #### Branch **main** irá ser  principal, onde iremos fazer o merge.
 
 
-### Descrição de Commits:
+### Descrição dos Commits:
 <pre>
 FIX:Correção de um bug.
 FEAT: Inicia implementação de uma nova feature
