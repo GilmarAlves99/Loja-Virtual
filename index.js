@@ -40,7 +40,18 @@ inicializarLoja();
 
 
 atualizarCarrinho = () => {
-    console.log(items)
+    var containerCarrinho = document.getElementById('carrinho')
+    containerCarrinho.innerHTML = "";
+
+    items.map((val) => {
+        if (val.quantidade > 0) {
+            containerCarrinho.innerHTML += `
+        <p>${val.nome} | quantidade: ${val.quantidade} </p>
+        <hr>
+        
+        `
+        }
+    })
 }
 
 var links = document.getElementsByTagName('a')

@@ -2,14 +2,21 @@ body {
     background-color: rgb(56, 56, 56);
 }
 
-#produtos,
-#carrinho {
+#produtos {
     background-color: rgb(109, 109, 109);
     max-width: 900px;
     margin: 0 auto;
     padding: 0 2%;
     display: flex;
     justify-content: space-around;
+}
+
+#carrinho {
+    background-color: rgb(109, 109, 109);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: block;
 }
 
 .produto-single {
