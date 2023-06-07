@@ -6,17 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja Virtual</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- load all Font Awesome v6 styles -->
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 </head>
 
 <body>
-    <div id="produtos"></div>
+    <main class="conteudo">
+        <div id="modalCarrinho">
+            <div class="modal">
+                Carrinho de compras :
+                <a id="buttonExit" href="#">sair</a>
+                <div id="carrinho"></div>
 
-    <div id="carrinho">
+            </div>
+        </div>
+        <header>
+            <nav>
+                <div>Parte 1</div>
+                <div>parte 2</div>
+                <div>
+                    <a id="buttonCar" href="#"><i class="icones fa-sharp fa-solid fa-cart-shopping"></i></a>
 
-    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div id="produtos"></div>
+
+
+        </main>
+
+
+    </main>
+
 </body>
 
 <script src="index.js"></script>
+<script src="abrirModal.js"></script>
 
 </html>

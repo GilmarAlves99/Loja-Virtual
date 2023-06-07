@@ -16,6 +16,48 @@ const items = [{
         img: 'imagens/chuteira.webp',
         quantidade: 0,
     },
+    {
+        id: 4,
+        nome: 'chuteira',
+        img: 'imagens/chuteidra.webp',
+        quantidade: 0,
+    },
+    {
+        id: 5,
+        nome: 'chuteira',
+        img: 'imagens/chuteira.webp',
+        quantidade: 0,
+    },
+    {
+        id: 55,
+        nome: 'chu88teira',
+        img: 'imagens/chuteira.webp',
+        quantidade: 0,
+    },
+    {
+        id: 28,
+        nome: 'chu88teira',
+        img: 'imagens/chuteira.webp',
+        quantidade: 0,
+    },
+    {
+        id: 266,
+        nome: 'chuteira',
+        img: 'imagens/chuteira.webp',
+        quantidade: 0,
+    },
+    {
+        id: 274,
+        nome: 'chuteira',
+        img: 'imagens/chuteira.webp',
+        quantidade: 0,
+    },
+    {
+        id: 75,
+        nome: 'chut8578eira',
+        img: 'imagens/chuteira.webp',
+        quantidade: 0,
+    },
 ]
 
 inicializarLoja = () => {
@@ -46,7 +88,9 @@ atualizarCarrinho = () => {
     items.map((val) => {
         if (val.quantidade > 0) {
             containerCarrinho.innerHTML += `
-        <p>${val.nome} | quantidade: ${val.quantidade} </p>
+            <div>
+            <img src="${val.img}" class="imgCarrinho">        <p>${val.nome} | quantidade: ${val.quantidade} </p>
+        </div>
         <hr>
         
         `
