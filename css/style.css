@@ -1,0 +1,77 @@
+@charset "UTF-8";
+body {
+  padding: 0;
+  margin: 0;
+}
+body main.conteudo {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgb(59, 15, 65);
+}
+body main.conteudo #modalCarrinho {
+  background-color: rgba(7, 19, 19, 0.61);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: absolute;
+  display: none;
+  z-index: 5;
+}
+body main.conteudo #modalCarrinho .modal {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(204, 21, 21, 0.671);
+  color: wheat;
+  width: 800px;
+  height: 300px;
+  overflow-y: scroll;
+}
+body main.conteudo #modalCarrinho .modal #carrinho .imgCarrinho {
+  width: 50px;
+  height: 50px;
+}
+body main.conteudo header {
+  background-color: rebeccapurple;
+  height: 50px;
+}
+body main.conteudo header nav {
+  display: flex;
+  justify-content: space-between;
+}
+body main.conteudo header nav div {
+  margin: 10px;
+  width: 100%;
+  background-color: rgb(123, 93, 153);
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+}
+body main.conteudo header nav div .icones {
+  font-size: 2em;
+}
+body main.conteudo main {
+  width: 100%;
+  background-color: rgb(70, 43, 43);
+  position: relative;
+  display: flex;
+}
+body main.conteudo main div#produtos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* sempre defina, seja wrap ou nowrap(padrão) */
+}
+body main.conteudo main div#produtos div.produto-single {
+  background-color: aquamarine;
+  margin: 10px;
+}
+body main.conteudo main div#produtos div.produto-single img {
+  width: 250px;
+  height: 200px;
+}
+
+/*# sourceMappingURL=style.css.map */
