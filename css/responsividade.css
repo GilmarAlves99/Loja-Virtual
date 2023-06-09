@@ -1,0 +1,17 @@
+@media screen and (max-width: 720px) {
+  body main.conteudo header nav div:nth-child(2) {
+    background-color: rgb(255, 0, 0);
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  body main.conteudo #modalCarrinho .modal {
+    max-width: 80%;
+  }
+}
+body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .sidenav img {
+  width: 190px;
+  height: 200px;
+}
+
+/*# sourceMappingURL=responsividade.css.map */

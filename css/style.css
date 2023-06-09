@@ -1,11 +1,11 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap");
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-weight: bolder;
-  font-family: "Times New Roman", Times, serif;
-  color: rgb(0, 0, 0);
+  font-family: "Raleway", sans-serif;
 }
 body main.conteudo {
   padding: 0;
@@ -13,6 +13,11 @@ body main.conteudo {
   height: 100vh;
   width: 100vw;
   position: absolute;
+}
+body main.conteudo a:link,
+body main.conteudo a:visited {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 body main.conteudo #modalCarrinho {
   background-color: rgba(112, 112, 112, 0.925);
@@ -58,7 +63,7 @@ body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .sidenav {
   grid-area: sidenav;
 }
 body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .sidenav img {
-  height: 200px;
+  height: 250px;
   width: 250px;
 }
 body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .content {
@@ -68,18 +73,26 @@ body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .footer {
   grid-area: footer;
 }
 body main.conteudo header {
-  background-color: rgb(32, 0, 173);
+  background-image: linear-gradient(to bottom right, rgba(204, 0, 255, 0.989), rgb(89, 0, 255));
   height: 50px;
 }
 body main.conteudo header nav {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+body main.conteudo header nav div:nth-child(1) {
+  font-family: "Raleway", sans-serif;
+  font-weight: bolder;
+  font-size: 1.5em;
 }
 body main.conteudo header nav div {
-  margin: 10px;
   color: rgb(255, 255, 255);
   width: 100%;
-  display: inherit;
+  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -100,8 +113,8 @@ body main.conteudo main div#produtos {
   /* sempre defina, seja wrap ou nowrap(padrão) */
 }
 body main.conteudo main div#produtos div.produto-single {
-  background-image: linear-gradient(to bottom right, red, rgba(53, 0, 151, 0.849));
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.356);
+  background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.211), rgba(53, 0, 151, 0.849));
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.782);
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -109,17 +122,12 @@ body main.conteudo main div#produtos div.produto-single {
   align-items: center;
   z-index: 1;
   height: 300px;
-  width: 350px;
-  color: rgb(255, 255, 255);
-}
-body main.conteudo main div#produtos div.produto-single a:link,
-body main.conteudo main div#produtos div.produto-single a:visited {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+  max-width: 350px;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
 }
 body main.conteudo main div#produtos div.produto-single .fundoBola {
   position: absolute;
-  background-color: rgb(0, 0, 0);
   border-radius: 50%;
   z-index: -1;
 }
@@ -130,7 +138,7 @@ body main.conteudo main div#produtos div.produto-single:hover .fundoBola {
   animation: mymove;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  background-image: linear-gradient(to bottom right, rgb(0, 13, 87), rgba(89, 0, 255, 0.849));
+  background-image: linear-gradient(to bottom right, rgba(191, 0, 255, 0.496), rgba(13, 0, 255, 0.323));
 }
 @keyframes mymove {
   from {
@@ -138,13 +146,13 @@ body main.conteudo main div#produtos div.produto-single:hover .fundoBola {
     height: 0px;
   }
   to {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
 }
 body main.conteudo main div#produtos div.produto-single img {
   width: 250px;
-  height: 200px;
+  height: 250px;
 }
 
 /*# sourceMappingURL=style.css.map */
