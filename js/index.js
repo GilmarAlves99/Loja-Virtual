@@ -81,8 +81,10 @@ inicializarLoja = () => {
         <span>${val.nome}</span>
         <div class="fundoBola"></div>
             <img src='${val.img}'/>
-            <span>${val.valor}</span>
+            <div class="destaqueValor">
+            <span>R$ ${val.valor}</span>
             <a key='${val.id}' href='#'>Comprar</a>
+            </div>
         </div>
         
         `;

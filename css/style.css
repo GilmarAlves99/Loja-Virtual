@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Raleway:wght@100;500&display=swap");
 body {
   padding: 0;
   margin: 0;
@@ -22,7 +22,7 @@ body main.conteudo a:visited {
 body main.conteudo #modalCarrinho {
   background-color: rgba(112, 112, 112, 0.925);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   left: 0;
   position: absolute;
   display: none;
@@ -48,6 +48,7 @@ body main.conteudo #modalCarrinho .modal .menuCarrinho span,
 body main.conteudo #modalCarrinho .modal .menuCarrinho a {
   flex: 1;
   text-align: center;
+  font-family: "Lora", serif;
 }
 body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 {
   display: grid;
@@ -58,13 +59,14 @@ body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 {
 body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 div {
   text-align: center;
   width: 100%;
+  font-family: "Lora", serif;
 }
 body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .sidenav {
   grid-area: sidenav;
 }
 body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .sidenav img {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
 }
 body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .content {
   grid-area: content;
@@ -113,8 +115,6 @@ body main.conteudo main div#produtos {
   /* sempre defina, seja wrap ou nowrap(padrão) */
 }
 body main.conteudo main div#produtos div.produto-single {
-  background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.211), rgba(53, 0, 151, 0.849));
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.782);
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -125,14 +125,13 @@ body main.conteudo main div#produtos div.produto-single {
   max-width: 350px;
   color: rgb(0, 0, 0);
   border-radius: 10px;
+  font-family: "Lora", serif;
+  position: relative;
 }
 body main.conteudo main div#produtos div.produto-single .fundoBola {
   position: absolute;
   border-radius: 50%;
   z-index: -1;
-}
-body main.conteudo main div#produtos div.produto-single:hover {
-  color: rgb(255, 255, 255);
 }
 body main.conteudo main div#produtos div.produto-single:hover .fundoBola {
   animation: mymove;
@@ -151,8 +150,20 @@ body main.conteudo main div#produtos div.produto-single:hover .fundoBola {
   }
 }
 body main.conteudo main div#produtos div.produto-single img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
+}
+body main.conteudo main div#produtos div.produto-single .destaqueValor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  background-color: rgba(109, 109, 109, 0.593);
+  width: 100%;
+  height: 40px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

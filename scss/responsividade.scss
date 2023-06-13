@@ -7,7 +7,7 @@ body main.conteudo {
     }
     #modalCarrinho .modal {
         @media screen and (max-width: 720px) {
-            max-width: 80%;
+            max-width: 100%;
         }
         #carrinho {
             .grid-template-2 {
@@ -19,6 +19,11 @@ body main.conteudo {
                     }
                 }
             }
+        }
+    }
+    main div#produtos div.produto-single {
+        @media screen and (max-width: 720px) {
+            width: 90%;
         }
     }
 }
