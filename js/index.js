@@ -1,73 +1,75 @@
 const items = [{
         id: 0,
-        nome: 'camiseta',
+        nome: 'Camiseta',
         img: 'imagens/camisa.webp',
         quantidade: 0,
         valor: 80,
     },
     {
         id: 1,
-        nome: 'shorts',
+        nome: 'Shors',
         img: 'imagens/shorts.webp',
         quantidade: 0,
-        valor: 80,
+        valor: 180,
     },
     {
-        id: 2,
-        nome: 'chuteira',
+        id: 3,
+        nome: 'Chuteira',
         img: 'imagens/chuteira.webp',
         quantidade: 0,
-        valor: 80,
+        valor: 20,
     },
     {
         id: 4,
-        nome: 'chuteira',
-        img: 'imagens/chuteira.webp',
+        nome: 'Camiseta',
+        img: 'imagens/camisa.webp',
         quantidade: 0,
-        valor: 80,
+        valor: 30,
     },
     {
         id: 5,
-        nome: 'chuteira',
-        img: 'imagens/chuteira.webp',
+        nome: 'Camiseta',
+        img: 'imagens/camisa.webp',
         quantidade: 0,
-        valor: 80,
+        valor: 50,
     },
     {
-        id: 55,
-        nome: 'chu88teira',
+        id: 6,
+        nome: 'Chuteira',
         img: 'imagens/chuteira.webp',
         quantidade: 0,
-        valor: 80,
+        valor: 40,
     },
     {
-        id: 28,
-        nome: 'chu88teira',
+        id: 7,
+        nome: 'Chuteira',
         img: 'imagens/chuteira.webp',
         quantidade: 0,
-        valor: 80,
+        valor: 90,
     },
     {
-        id: 266,
-        nome: 'chuteira',
-        img: 'imagens/chuteira.webp',
+        id: 8,
+        nome: 'Shors',
+        img: 'imagens/shorts.webp',
         quantidade: 0,
-        valor: 80,
+        valor: 142,
     },
     {
-        id: 274,
-        nome: 'chuteira',
-        img: 'imagens/chuteira.webp',
+        id: 9,
+        nome: 'Camiseta',
+        img: 'imagens/camisa.webp',
         quantidade: 0,
-        valor: 80,
+        valor: 125,
     },
     {
-        id: 75,
-        nome: 'chut8578eira',
-        img: 'imagens/chuteira.webp',
+        id: 10,
+        nome: 'Shors',
+        img: 'imagens/shorts.webp',
         quantidade: 0,
-        valor: 80,
+        valor: 110,
     },
+
+
 ]
 
 inicializarLoja = () => {
@@ -97,12 +99,19 @@ inicializarLoja = () => {
 inicializarLoja();
 
 
+
 atualizarCarrinho = () => {
+
+    var spntotal = document.getElementById('spntotal');
+    spntotal.innerHTML = `${0}`
     var containerCarrinho = document.getElementById('carrinho')
     containerCarrinho.innerHTML = "";
 
     items.map((val) => {
+        console.log(val)
+
         if (val.quantidade > 0) {
+
             containerCarrinho.innerHTML += `
             <div class='grid-template-2'>
              <div class='sidenav'>
@@ -112,25 +121,44 @@ atualizarCarrinho = () => {
              <p>${val.nome}</p>
              </div>
             <div class='footer'>
-             <p>Quantidade: ${val.quantidade} </p>
-             <p>Valor: ${val.valor} </p>
+             <p>Quantidade: <span id="quantidade">${val.quantidade}</span> </p>
+             <p>Valor: <span id="valorProduto">${val.valor} </span></p>
              </div>
         </div>
         <hr>
         
-        `
+        `;
+
+
+            const produtosComQuantidade = items.filter(item => item.quantidade > 0);
+
+            const somaValores = produtosComQuantidade.reduce((total, item) => total + (item.valor * item.quantidade), 0);
+
+
+
+
+
         }
+
+
+
+
     })
+
+
 }
 
-var links = document.getElementsByTagName('a')
+const links = document.querySelectorAll('a[key]');
+console.log(links)
 
-for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener("click",
+links.forEach(link => {
+
+    link.addEventListener("click",
         function() {
+
             let key = this.getAttribute("key")
             items[key].quantidade++;
             atualizarCarrinho();
             return false;
         })
-}
+});
