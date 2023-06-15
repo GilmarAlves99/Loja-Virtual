@@ -13,6 +13,13 @@ const items = [{
         valor: 180,
     },
     {
+        id: 2,
+        nome: 'Chuteira',
+        img: 'imagens/shorts.webp',
+        quantidade: 0,
+        valor: 140,
+    },
+    {
         id: 3,
         nome: 'Chuteira',
         img: 'imagens/chuteira.webp',
@@ -73,71 +80,73 @@ const items = [{
 ]
 
 inicializarLoja = () => {
-    var containerProdutos = document.getElementById('produtos');
+    let containerProdutos = document.getElementById('produtos');
     items.map((val) => {
 
         containerProdutos.innerHTML += `
-        
-        <div class='produto-single'>
-       
-        <span>${val.nome}</span>
-        <div class="fundoBola"></div>
-            <img src='${val.img}'/>
-            <div class="destaqueValor">
-            <span>R$ ${val.valor}</span>
-            <a key='${val.id}' href='#'>Comprar</a>
-            </div>
+    
+    <div class='produto-single'>
+   
+    <span>${val.nome}</span>
+    <div class="fundoBola"></div>
+        <img src='${val.img}'/>
+        <div class="destaqueValor">
+        <span>R$ ${val.valor}</span>
+        <a key='${val.id}' href='#'>Comprar</a>
+        <p>${val.id}</p>
         </div>
-        
-        `;
+    </div>
+    
+    `;
 
     });
 
 }
 
 
-inicializarLoja();
+
+
+const containerCarrinho = document.getElementById('carrinho')
+const spntotal = document.getElementById('spntotal');
+const quantidadeNotificacao = document.getElementById('quantidadeNotificacao');
+
 
 
 
 atualizarCarrinho = () => {
 
-    var spntotal = document.getElementById('spntotal');
-    spntotal.innerHTML = `${0}`
-    var containerCarrinho = document.getElementById('carrinho')
     containerCarrinho.innerHTML = "";
-
     items.map((val) => {
-        console.log(val)
 
         if (val.quantidade > 0) {
-
             containerCarrinho.innerHTML += `
-            <div class='grid-template-2'>
-             <div class='sidenav'>
+        <div class='grid-template-2'>
+            <div class='sidenav'>
                 <img src="${val.img}" class="imgCarrinho">        
             </div>
             <div class='content'>
-             <p>${val.nome}</p>
-             </div>
+                <p>${val.nome}</p>
+            </div>
             <div class='footer'>
-             <p>Quantidade: <span id="quantidade">${val.quantidade}</span> </p>
-             <p>Valor: <span id="valorProduto">${val.valor} </span></p>
-             </div>
+                <p>Quantidade: <span id="quantidade">${val.quantidade}</span> </p>
+                <p>Valor: <span id="valorProduto">${val.valor} </span></p>
+            </div>
         </div>
         <hr>
-        
-        `;
+    `;
 
 
-            const produtosComQuantidade = items.filter(item => item.quantidade > 0);
+            var produtosComQuantidade = items.filter(item => item.quantidade > 0);
 
-            const somaValores = produtosComQuantidade.reduce((total, item) => total + (item.valor * item.quantidade), 0);
-
-
+            var somaValores = produtosComQuantidade.reduce((total, item) => total + (item.valor * item.quantidade), 0);
 
 
+            spntotal.textContent = `${ somaValores }`
 
+
+            var quantidadeTotal = produtosComQuantidade.reduce((total, item) => total + item.quantidade, 0);
+            // Atualizar a notificação de quantidade de produtos
+            quantidadeNotificacao.textContent = quantidadeTotal;
         }
 
 
@@ -148,14 +157,15 @@ atualizarCarrinho = () => {
 
 }
 
+inicializarLoja();
+
+
 const links = document.querySelectorAll('a[key]');
-console.log(links)
 
 links.forEach(link => {
 
     link.addEventListener("click",
         function() {
-
             let key = this.getAttribute("key")
             items[key].quantidade++;
             atualizarCarrinho();
