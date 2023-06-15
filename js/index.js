@@ -86,14 +86,13 @@ inicializarLoja = () => {
         containerProdutos.innerHTML += `
     
     <div class='produto-single'>
-   
-    <span>${val.nome}</span>
-    <div class="fundoBola"></div>
-        <img src='${val.img}'/>
+            <span>${val.nome}</span>
+        <div class="fundoBola"></div>
+            <img src='${val.img}'/>
         <div class="destaqueValor">
-        <span>R$ ${val.valor}</span>
-        <a key='${val.id}' href='#'>Comprar</a>
-        <p>${val.id}</p>
+            <span>R$ ${val.valor}</span>
+            <a key='${val.id}' href='#'>Comprar</a>
+            <p>${val.id}</p>
         </div>
     </div>
     
@@ -104,14 +103,9 @@ inicializarLoja = () => {
 }
 
 
-
-
 const containerCarrinho = document.getElementById('carrinho')
 const spntotal = document.getElementById('spntotal');
 const quantidadeNotificacao = document.getElementById('quantidadeNotificacao');
-
-
-
 
 atualizarCarrinho = () => {
 
