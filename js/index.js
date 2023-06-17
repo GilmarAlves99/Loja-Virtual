@@ -110,7 +110,7 @@ filtroSelect.addEventListener('change', () => {
             break;
     }
 
-    // Atualiza a exibição dos itens filtrados
+
     atualizarItensExibidos(itensFiltrados);
 })
 
@@ -132,6 +132,16 @@ inicializarLoja = () => {
         
         `;
 
+    });
+    const links = document.querySelectorAll('a[key]');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const key = this.getAttribute('key');
+            items[key].quantidade++;
+            atualizarCarrinho();
+            return false;
+        });
     });
 
 }
@@ -157,6 +167,7 @@ atualizarCarrinho = () => {
             </div>
             <div class='footer'>
                 <p>Quantidade: <span id="quantidade">${val.quantidade}</span> </p>
+               
                 <p>Valor: <span id="valorProduto">${val.valor} </span></p>
             </div>
         </div>
@@ -185,7 +196,7 @@ atualizarCarrinho = () => {
 
 }
 
-// Função para atualizar a exibição dos itens
+
 function atualizarItensExibidos(itens) {
     const containerProdutos = document.getElementById('produtos');
     containerProdutos.innerHTML = '';
@@ -204,17 +215,8 @@ function atualizarItensExibidos(itens) {
       `;
     });
 
-    // Atualiza os ouvintes de evento dos links de compra
-    const links = document.querySelectorAll('a[key]');
-    links.forEach(link => {
-        link.addEventListener('click', function() {
-            const key = this.getAttribute('key');
-            items[key].quantidade++;
-            atualizarCarrinho();
-            return false;
-        });
-    });
+
 }
 
-// Chama a função inicializarLoja para exibir todos os itens inicialmente
+
 inicializarLoja();
