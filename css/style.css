@@ -88,6 +88,7 @@ body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .footer {
 }
 body main.conteudo header {
   background-image: linear-gradient(to bottom right, rgba(204, 0, 255, 0.989), rgb(89, 0, 255));
+  width: 100vw;
   height: 50px;
 }
 body main.conteudo header nav {
@@ -110,6 +111,24 @@ body main.conteudo header nav div {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+body main.conteudo header nav div .custom-select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #cccccc;
+  font-size: 14px;
+  width: 200px;
+}
+body main.conteudo header nav div .custom-select option {
+  background-color: #fff;
+  font-size: 14px;
+  color: #000000;
+  border: 1px solid #ccc;
+}
+body main.conteudo header nav div .custom-select:focus {
+  outline: none;
+  border-color: #868686;
 }
 body main.conteudo header nav div .icones {
   color: rgb(255, 255, 255);
@@ -139,6 +158,8 @@ body main.conteudo main div#produtos {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
 }
 body main.conteudo main div#produtos div.produto-single {
   margin: 10px;

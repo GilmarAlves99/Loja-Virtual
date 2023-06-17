@@ -79,6 +79,41 @@ const items = [{
 
 ]
 
+
+const filtroSelect = document.getElementById('filtroProdutos');
+console.log(filtroSelect)
+
+filtroSelect.addEventListener('change', () => {
+    const filtro = filtroSelect.value;
+
+
+    let itensFiltrados = [];
+
+    switch (filtro) {
+        case 'menor':
+            itensFiltrados = items.slice().sort((a, b) => a.valor - b.valor);
+            break;
+        case 'maior':
+            itensFiltrados = items.slice().sort((a, b) => b.valor - a.valor);
+            break;
+        case 'camisa':
+            itensFiltrados = items.filter(item => item.nome === 'Camiseta');
+            break;
+        case 'chuteira':
+            itensFiltrados = items.filter(item => item.nome === 'Chuteira');
+            break;
+        case 'shorts':
+            itensFiltrados = items.filter(item => item.nome === 'Shors');
+            break;
+        default:
+            itensFiltrados = items;
+            break;
+    }
+
+    // Atualiza a exibição dos itens filtrados
+    atualizarItensExibidos(itensFiltrados);
+})
+
 inicializarLoja = () => {
     let containerProdutos = document.getElementById('produtos');
     items.map((val) => {
@@ -150,18 +185,36 @@ atualizarCarrinho = () => {
 
 }
 
-inicializarLoja();
+// Função para atualizar a exibição dos itens
+function atualizarItensExibidos(itens) {
+    const containerProdutos = document.getElementById('produtos');
+    containerProdutos.innerHTML = '';
 
+    itens.forEach(item => {
+        containerProdutos.innerHTML += `
+        <div class='produto-single'>
+          <span>${item.nome}</span>
+          <div class="fundoBola"></div>
+          <img src='${item.img}'/>
+          <div class="destaqueValor">
+            <span>R$ ${item.valor}</span>
+            <a key='${item.id}' href='#'>Comprar</a>
+          </div>
+        </div>
+      `;
+    });
 
-const links = document.querySelectorAll('a[key]');
-
-links.forEach(link => {
-
-    link.addEventListener("click",
-        function() {
-            let key = this.getAttribute("key")
+    // Atualiza os ouvintes de evento dos links de compra
+    const links = document.querySelectorAll('a[key]');
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            const key = this.getAttribute('key');
             items[key].quantidade++;
             atualizarCarrinho();
             return false;
-        })
-});
+        });
+    });
+}
+
+// Chama a função inicializarLoja para exibir todos os itens inicialmente
+inicializarLoja();
