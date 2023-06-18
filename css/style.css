@@ -15,7 +15,7 @@ body main.conteudo {
 body main.conteudo a:link,
 body main.conteudo a:visited {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: wheat;
 }
 body main.conteudo #modalCarrinho {
   width: 100%;
@@ -24,7 +24,6 @@ body main.conteudo #modalCarrinho {
   position: absolute;
   display: none;
   z-index: 5;
-  background-color: rgba(112, 112, 112, 0.596);
   animation: modalFundo-in 2s forwards;
 }
 @keyframes modalFundo-in {
@@ -38,7 +37,6 @@ body main.conteudo #modalCarrinho .modal {
   margin-right: 10px;
   float: right;
   flex-direction: column;
-  color: rgb(0, 0, 0);
   width: 500px;
   height: 300px;
   margin-top: 50px;
@@ -58,6 +56,7 @@ body main.conteudo #modalCarrinho .modal .menuCarrinho {
 }
 body main.conteudo #modalCarrinho .modal .menuCarrinho span,
 body main.conteudo #modalCarrinho .modal .menuCarrinho a {
+  color: rgb(0, 0, 0);
   flex: 1;
   text-align: center;
   font-family: "Lora", serif;
@@ -87,9 +86,9 @@ body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .footer {
   grid-area: footer;
 }
 body main.conteudo header {
-  background-image: linear-gradient(to bottom right, rgba(204, 0, 255, 0.989), rgb(89, 0, 255));
   width: 100vw;
   height: 50px;
+  background-color: #5a2d82;
 }
 body main.conteudo header nav {
   position: relative;
@@ -174,7 +173,7 @@ body main.conteudo main div#produtos div.produto-single {
   border-radius: 10px;
   position: relative;
   font-family: "Lora", serif;
-  font-weight: 600;
+  font-weight: 900;
 }
 body main.conteudo main div#produtos div.produto-single .fundoBola {
   position: absolute;
@@ -185,7 +184,7 @@ body main.conteudo main div#produtos div.produto-single:hover .fundoBola {
   animation: mymove;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  background-image: linear-gradient(to bottom right, rgba(191, 0, 255, 0.496), rgba(13, 0, 255, 0.323));
+  background-image: linear-gradient(to bottom right, rgb(229, 150, 255), rgb(13, 0, 255));
 }
 @keyframes mymove {
   from {
@@ -208,7 +207,8 @@ body main.conteudo main div#produtos div.produto-single .destaqueValor {
   justify-content: center;
   align-items: center;
   bottom: 0px;
-  background-color: rgba(131, 9, 9, 0.411);
+  background-color: #5a2d82;
+  color: wheat;
   width: 100%;
   height: 40px;
   border-radius: 0px 0px 10px 10px;

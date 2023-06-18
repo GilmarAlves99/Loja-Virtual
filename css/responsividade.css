@@ -1,14 +1,18 @@
 @media screen and (max-width: 720px) {
-  body main.conteudo #modalCarrinho .modal {
+  body main.conteudo header nav div.selectFiltro {
+    max-width: 80%;
+  }
+  body main.conteudo header nav div.selectFiltro select {
+    width: 60%;
+  }
+  #modalCarrinho .modal {
     max-width: 100%;
   }
-}
-body main.conteudo #modalCarrinho .modal #carrinho .grid-template-2 .sidenav img {
-  width: 190px;
-  height: 200px;
-}
-@media screen and (max-width: 720px) {
-  body main.conteudo main div#produtos div.produto-single {
+  #modalCarrinho .modal #carrinho .grid-template-2 .sidenav img {
+    width: 190px;
+    height: 200px;
+  }
+  main div#produtos div.produto-single {
     width: 90%;
   }
 }

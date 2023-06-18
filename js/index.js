@@ -1,77 +1,88 @@
 const items = [{
         id: 0,
-        nome: 'Camiseta',
+        nome: 'Camisa Ajax',
+        categoria: 'Camisa',
         img: 'imagens/camisa.webp',
         quantidade: 0,
         valor: 80,
     },
     {
         id: 1,
-        nome: 'Shors',
+        nome: 'Shors Ajax',
+        categoria: 'Shorts',
         img: 'imagens/shorts.webp',
         quantidade: 0,
         valor: 180,
     },
     {
         id: 2,
-        nome: 'Chuteira',
-        img: 'imagens/shorts.webp',
+        nome: 'Chuteira Adidas Copa 03',
+        categoria: 'Chuteira',
+        img: 'imagens/adidasCampoCopa.png',
         quantidade: 0,
         valor: 140,
     },
     {
         id: 3,
-        nome: 'Chuteira',
+        nome: 'Chuteira Oxn Agilis ',
+        categoria: 'Chuteira',
         img: 'imagens/chuteira.webp',
         quantidade: 0,
         valor: 20,
     },
     {
         id: 4,
-        nome: 'Camiseta',
-        img: 'imagens/camisa.webp',
+        nome: 'Camisa Real Madrid 21/22',
+        categoria: 'Camisa',
+        img: 'imagens/realMadridCM.png',
         quantidade: 0,
         valor: 30,
     },
     {
         id: 5,
-        nome: 'Camiseta',
-        img: 'imagens/camisa.webp',
+        nome: 'Shorts Real Madrid 21/22',
+        categoria: 'Shorts',
+        img: 'imagens/RealMadridSTS.png',
         quantidade: 0,
         valor: 50,
     },
     {
         id: 6,
-        nome: 'Chuteira',
-        img: 'imagens/chuteira.webp',
+        nome: 'Camisa Manchester City 21/22',
+        categoria: 'Camisa',
+        img: 'imagens/manchestercityCm.png',
         quantidade: 0,
         valor: 40,
     },
     {
         id: 7,
-        nome: 'Chuteira',
-        img: 'imagens/chuteira.webp',
+        nome: 'Shorts Manchester City 21/22',
+        categoria: 'Shorts',
+        img: 'imagens/manchesterCity.png',
         quantidade: 0,
         valor: 90,
     },
     {
         id: 8,
-        nome: 'Shors',
-        img: 'imagens/shorts.webp',
+        nome: 'Chuteira Penalty',
+        categoria: 'Chuteira',
+        img: 'imagens/penaltyChuteira.png',
         quantidade: 0,
         valor: 142,
     },
     {
         id: 9,
-        nome: 'Camiseta',
-        img: 'imagens/camisa.webp',
+        nome: 'Shorts Barcelona 22',
+        categoria: 'Shorts',
+        img: 'imagens/barcelonaSTS.png',
         quantidade: 0,
         valor: 125,
     },
     {
         id: 10,
-        nome: 'Shors',
-        img: 'imagens/shorts.webp',
+        nome: 'Camisa Barcelona 22',
+        categoria: 'Camisa',
+        img: 'imagens/barcelonaCM.png',
         quantidade: 0,
         valor: 110,
     },
@@ -96,14 +107,14 @@ filtroSelect.addEventListener('change', () => {
         case 'maior':
             itensFiltrados = items.slice().sort((a, b) => b.valor - a.valor);
             break;
-        case 'camisa':
-            itensFiltrados = items.filter(item => item.nome === 'Camiseta');
+        case 'Camisa':
+            itensFiltrados = items.filter(item => item.categoria === 'Camisa');
             break;
-        case 'chuteira':
-            itensFiltrados = items.filter(item => item.nome === 'Chuteira');
+        case 'Chuteira':
+            itensFiltrados = items.filter(item => item.categoria === 'Chuteira');
             break;
-        case 'shorts':
-            itensFiltrados = items.filter(item => item.nome === 'Shors');
+        case 'Shorts':
+            itensFiltrados = items.filter(item => item.categoria === 'Shorts');
             break;
         default:
             itensFiltrados = items;
@@ -168,7 +179,7 @@ atualizarCarrinho = () => {
             <div class='footer'>
                 <p>Quantidade: <span id="quantidade">${val.quantidade}</span> </p>
                
-                <p>Valor: <span id="valorProduto">${val.valor} </span></p>
+                <p>Valor: R$ <span id="valorProduto">${val.valor} </span></p>
             </div>
         </div>
         <hr>

@@ -1,29 +1,18 @@
-body main.conteudo {
-    // header nav div:nth-child(2) {
-    //     @media screen and (max-width: 720px) {
-    //         background-color: rgb(255, 0, 0);
-    //         display: none;
-    //     }
-    // }
+@media screen and (max-width: 720px) {
+    body main.conteudo header nav div.selectFiltro {
+        max-width: 80%;
+    }
+    body main.conteudo header nav div.selectFiltro select {
+        width: 60%;
+    }
     #modalCarrinho .modal {
-        @media screen and (max-width: 720px) {
-            max-width: 100%;
-        }
-        #carrinho {
-            .grid-template-2 {
-                .sidenav {
-                    img {
-                        @media screen and (max-width: 720px) {}
-                        width: 190px;
-                        height: 200px;
-                    }
-                }
-            }
-        }
+        max-width: 100%;
+    }
+    #modalCarrinho .modal #carrinho .grid-template-2 .sidenav img {
+        width: 190px;
+        height: 200px;
     }
     main div#produtos div.produto-single {
-        @media screen and (max-width: 720px) {
-            width: 90%;
-        }
+        width: 90%;
     }
 }
