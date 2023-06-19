@@ -6,10 +6,10 @@ Link : <a href="https://gilmaralves99.github.io/Loja-Virtual/"> abrir site</a>
 
 Etapas :
 
-- [ ] Etapa 1
-- [ ] Etapa 2
-- [ ] Etapa 3
-- [ ] Etapa 4
+- [X] Etapa 1
+- [X] Etapa 2
+- [X] Etapa 3
+- [X] Etapa 4
 
 Listagem :
 
@@ -38,7 +38,10 @@ Listagem :
 
 #### Branch **main** irá ser  principal, onde iremos fazer o merge.
 
-
+### Tecnologias utilizadas :
+<pre>
+HTML, SCSS, CSS, JAVASCRIPT.
+</pre>
 ### Descrição dos Commits:
 <pre>
 FIX:Correção de um bug.
