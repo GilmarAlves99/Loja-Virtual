@@ -86,64 +86,9 @@ const items = [{
         quantidade: 0,
         valor: 110,
     },
+];
 
-
-]
-
-
-const filtroSelect = document.getElementById('filtroProdutos');
-console.log(filtroSelect)
-
-filtroSelect.addEventListener('change', () => {
-    const filtro = filtroSelect.value;
-
-
-    let itensFiltrados = [];
-
-    switch (filtro) {
-        case 'menor':
-            itensFiltrados = items.slice().sort((a, b) => a.valor - b.valor);
-            break;
-        case 'maior':
-            itensFiltrados = items.slice().sort((a, b) => b.valor - a.valor);
-            break;
-        case 'Camisa':
-            itensFiltrados = items.filter(item => item.categoria === 'Camisa');
-            break;
-        case 'Chuteira':
-            itensFiltrados = items.filter(item => item.categoria === 'Chuteira');
-            break;
-        case 'Shorts':
-            itensFiltrados = items.filter(item => item.categoria === 'Shorts');
-            break;
-        default:
-            itensFiltrados = items;
-            break;
-    }
-
-
-    atualizarItensExibidos(itensFiltrados);
-})
-
-inicializarLoja = () => {
-    let containerProdutos = document.getElementById('produtos');
-    items.map((val) => {
-
-        containerProdutos.innerHTML += `
-    
-    <div class='produto-single'>
-            <span>${val.nome}</span>
-        <div class="fundoBola"></div>
-            <img src='${val.img}'/>
-            <div class="destaqueValor">
-            <span>R$ ${val.valor}</span>
-            <a key='${val.id}' href='#'>Comprar</a>
-            </div>
-        </div>
-        
-        `;
-
-    });
+function link() {
     const links = document.querySelectorAll('a[key]');
     links.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -154,59 +99,97 @@ inicializarLoja = () => {
             return false;
         });
     });
-
-}
-
-
-const containerCarrinho = document.getElementById('carrinho')
+};
+const filtroSelect = document.getElementById('filtroProdutos');
+const containerCarrinho = document.getElementById('carrinho');
 const spntotal = document.getElementById('spntotal');
 const quantidadeNotificacao = document.getElementById('quantidadeNotificacao');
 
-atualizarCarrinho = () => {
+filtroSelect.addEventListener('change', () => {
+    const filtro = filtroSelect.value;
+    let itensFiltrados = [];
 
-    containerCarrinho.innerHTML = "";
-    items.map((val) => {
+    switch (filtro) {
+        case 'menor':
+            itensFiltrados = items.slice().sort((a, b) => a.valor - b.valor);
+            break;
+        case 'maior':
+            itensFiltrados = items.slice().sort((a, b) => b.valor - a.valor);
+            break;
+        case 'camisa':
+            itensFiltrados = items.filter(item => item.categoria === 'Camisa');
+            break;
+        case 'chuteira':
+            itensFiltrados = items.filter(item => item.categoria === 'Chuteira');
+            break;
+        case 'shorts':
+            itensFiltrados = items.filter(item => item.categoria === 'Shorts');
+            break;
+        default:
+            itensFiltrados = items;
+            break;
+    }
 
-        if (val.quantidade > 0) {
-            containerCarrinho.innerHTML += `
-        <div class='grid-template-2'>
-            <div class='sidenav'>
-                <img src="${val.img}" class="imgCarrinho">        
-            </div>
-            <div class='content'>
-                <p>${val.nome}</p>
-            </div>
-            <div class='footer'>
-                <p>Quantidade: <span id="quantidade">${val.quantidade}</span> </p>
-               
-                <p>Valor: R$ <span id="valorProduto">${val.valor} </span></p>
-            </div>
+    atualizarItensExibidos(itensFiltrados);
+});
+
+inicializarLoja = () => {
+    let containerProdutos = document.getElementById('produtos');
+    items.map(val => {
+        containerProdutos.innerHTML += `
+        <div class='produto-single'>
+          <span>${val.nome}</span>
+          <div class="fundoBola"></div>
+          <img src='${val.img}'/>
+          <div class="destaqueValor">
+            <span>R$ ${val.valor}</span>
+            <a key='${val.id}' href='#'>Comprar</a>
+          </div>
         </div>
-        <hr>
-    `;
+      `;
+    });
 
-
-            var produtosComQuantidade = items.filter(item => item.quantidade > 0);
-
-            var somaValores = produtosComQuantidade.reduce((total, item) => total + (item.valor * item.quantidade), 0);
-
-
-            spntotal.textContent = `${ somaValores }`
-
-
-            var quantidadeTotal = produtosComQuantidade.reduce((total, item) => total + item.quantidade, 0);
-            // Atualizar a notificação de quantidade de produtos
-            quantidadeNotificacao.textContent = quantidadeTotal;
-        }
-
-
-
-
-    })
-
+    link()
 
 }
 
+
+atualizarCarrinho = () => {
+    containerCarrinho.innerHTML = '';
+    items.map(val => {
+        if (val.quantidade > 0) {
+            containerCarrinho.innerHTML += `
+          <div class='grid-template-2'>
+            <div class='sidenav'>
+              <img src="${val.img}" class="imgCarrinho">        
+            </div>
+            <div class='content'>
+              <p>${val.nome}</p>
+            </div>
+            <div class='footer'>
+              <p>Quantidade: <span id="quantidade">${val.quantidade}</span> </p>
+              <p>Valor: R$ <span id="valorProduto">${val.valor} </span></p>
+            </div>
+          </div>
+          <hr>
+        `;
+        }
+    });
+
+    var produtosComQuantidade = items.filter(item => item.quantidade > 0);
+    var somaValores = produtosComQuantidade.reduce(
+        (total, item) => total + item.valor * item.quantidade,
+        0
+    );
+
+    spntotal.textContent = `${somaValores}`;
+
+    var quantidadeTotal = produtosComQuantidade.reduce(
+        (total, item) => total + item.quantidade,
+        0
+    );
+    quantidadeNotificacao.textContent = quantidadeTotal;
+};
 
 function atualizarItensExibidos(itens) {
     const containerProdutos = document.getElementById('produtos');
@@ -226,8 +209,7 @@ function atualizarItensExibidos(itens) {
       `;
     });
 
-
+    link()
 }
-
 
 inicializarLoja();
